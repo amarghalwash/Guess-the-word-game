@@ -116,6 +116,7 @@ button:disabled {
 
 .key-colors {
   flex: 1 1 100%;
+  margin-bottom: 50px;
 }
 
 .key-color {
