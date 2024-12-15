@@ -1,149 +1,168 @@
 * {
   box-sizing: border-box;
 }
+
 :root {
   --main-color: #ab5511;
 }
+
 body {
   margin: 0;
   background-color: #eee;
   font-family: Arial, Helvetica, sans-serif;
 }
+
 h1 {
   background-color: white;
   text-align: center;
   padding: 20px;
-  margin: 0 0 50px;
+  margin: 0 0 30px;
 }
+
 .guess-game {
   text-align: center;
-  width: 1000px;
+  width: 90%;
+  max-width: 1000px;
   margin: 20px auto;
   display: flex;
-  align-items: flex-start;
+  flex-wrap: wrap;
   justify-content: space-between;
-
-  .game-area {
-    .inputs {
-      div {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 20px;
-        span {
-          font-size: 25px;
-          font-weight: bold;
-        }
-      }
-      .disabled-inputs {
-        opacity: 0.5;
-        pointer-events: none;
-      }
-      input {
-        /* text-transform: uppercase; */
-        width: 60px;
-        height: 60px;
-        border: none;
-        border-bottom: 3px solid #333;
-        font-size: 50px;
-        background-color: white;
-        text-align: center;
-        margin: 0 5px;
-        &.yes-in-place {
-          background-color: #ff9911;
-          border: #ff9911;
-          color: white;
-        }
-        &.not-in-place {
-          background-color: #11bb88;
-          border: #11bb88;
-          color: white;
-        }
-        &.no {
-          background-color: #2200ff;
-          border: #2200ff;
-          color: white;
-        }
-      }
-    }
-
-    .control {
-      display: flex;
-      justify-content: center;
-      margin: 30px auto;
-      align-items: center;
-      width: 500px;
-      gap: 10px;
-      .check {
-        background-color: var(--main-color);
-        flex: 1;
-      }
-      .hint {
-        background-color: #009688;
-        width: fit-content;
-      }
-      button {
-        border: none;
-        font-size: 25px;
-        padding: 15px 20px;
-        border-radius: 8px;
-        color: white;
-        cursor: pointer;
-        font-weight: bold;
-      }
-      button:disabled {
-        opacity: 0.5;
-        background-color: black;
-        cursor: no-drop;
-      }
-    }
-  }
-
-  .key-colors {
-    .key-color {
-      display: flex;
-      align-items: center;
-      margin-bottom: 10px;
-      padding: 15px;
-      background-color: white;
-      .key {
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        margin-right: 10px;
-      }
-      .in-place {
-        background-color: #ff9911;
-      }
-      .not-in-place {
-        background-color: #11bb88;
-      }
-      .no {
-        background-color: #2200ff;
-      }
-      .key-text {
-        font-size: 20px;
-        font-weight: bold;
-      }
-    }
-  }
+  align-items: flex-start;
 }
+
+.game-area {
+  flex: 1 1 100%;
+  margin-bottom: 20px;
+}
+
+.inputs div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.inputs div span {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.disabled-inputs {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+input {
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-bottom: 3px solid #333;
+  font-size: 40px;
+  background-color: white;
+  text-align: center;
+  margin: 0 5px;
+}
+
+input.yes-in-place {
+  background-color: #ff9911;
+  border: #ff9911;
+  color: white;
+}
+
+input.not-in-place {
+  background-color: #11bb88;
+  border: #11bb88;
+  color: white;
+}
+
+input.no {
+  background-color: #2200ff;
+  border: #2200ff;
+  color: white;
+}
+
+.control {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px auto;
+}
+
+button {
+  border: none;
+  font-size: 18px;
+  padding: 12px 15px;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  flex: 1;
+}
+
+button.check {
+  background-color: var(--main-color);
+}
+
+button.hint {
+  background-color: #009688;
+}
+
+button:disabled {
+  opacity: 0.5;
+  background-color: black;
+  cursor: no-drop;
+}
+
+.key-colors {
+  flex: 1 1 100%;
+}
+
+.key-color {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: white;
+  font-size: 16px;
+}
+
+.key {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.key.in-place {
+  background-color: #ff9911;
+}
+
+.key.not-in-place {
+  background-color: #11bb88;
+}
+
+.key.no {
+  background-color: #2200ff;
+}
+
+.key-text {
+  font-weight: bold;
+}
+
 .message {
-  font-size: 25px;
+  font-size: 20px;
   font-weight: bold;
   text-align: center;
-  span {
-    color: #922222;
-    font-size: 50px;
-    font-weight: bold;
-    display: block;
-    margin-top: 10px;
-    text-transform: capitalize;
-  }
-  p {
-    margin-top: 15px;
-  }
 }
+
+.message span {
+  color: #922222;
+  font-size: 40px;
+  display: block;
+  margin-top: 10px;
+}
+
 footer {
   text-align: center;
   background-color: #333;
@@ -152,15 +171,14 @@ footer {
   bottom: 0;
   left: 0;
   width: 100%;
-  padding: 20px;
+  padding: 15px;
 }
 
 footer a {
-  font-size: 20px;
+  font-size: 18px;
   color: wheat;
   text-decoration: none;
   font-weight: bold;
-  display: inline-block;
   transition: color 0.3s ease;
 }
 
@@ -182,5 +200,70 @@ footer a:hover {
   }
   75% {
     transform: translateX(-5px);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .guess-game {
+    flex-direction: column;
+  }
+
+  .game-area {
+    width: 100%;
+  }
+
+  input {
+    width: 45px;
+    height: 45px;
+    font-size: 30px;
+  }
+
+  .control {
+    width: 100%;
+  }
+
+  button {
+    font-size: 16px;
+    padding: 10px 12px;
+  }
+
+  .key-color {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .key {
+    width: 20px;
+    height: 20px;
+  }
+
+  footer a {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  input {
+    width: 40px;
+    height: 40px;
+    font-size: 25px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+
+  .key-color {
+    font-size: 12px;
+  }
+
+  footer {
+    font-size: 14px;
+  }
+
+  footer a {
+    font-size: 14px;
   }
 }
